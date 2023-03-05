@@ -1,9 +1,7 @@
-import Card from "./Card";
+import Card from "./CourseCard";
 import Loader from "./Loader";
-import FormField from "./FormField";
 
 export {
     Card,
     Loader,
-    FormField
 }
