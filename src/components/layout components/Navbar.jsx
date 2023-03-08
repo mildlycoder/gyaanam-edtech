@@ -9,7 +9,7 @@ const Navbar = () => {
         </div>
 
         <ul>
-        <Link to='/login'><li><button className='px-10 py-2 rounded-r-full rounded-l-full font-semibold border-2 border-[#0A2640] hover:bg-transparent hover: transition-all'>Log in</button></li></Link>
+        <Link to='/login'><li><button className='px-10 py-2 rounded-r-full rounded-l-full font-semibold border-2 border-[#0A2640] hover:bg-[#0A2640] hover:text-[#65E4A3] hover:scale-110 transition-all'>Log in</button></li></Link>
         </ul>
       </nav>
     </header>

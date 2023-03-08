@@ -17,7 +17,7 @@ const Card = ({course}) => {
       <img src={urlFor(course.courseImg).url()} className='w-[90%]'/>
       <h1 className='text-2xl'>{course.course}</h1>
       <h2 className='text-xl text-[#777777]'>{course.meta}</h2>
-      <Link to='/courses'><span className='underline underline-offset-8 font-semibold flex items-center gap-2'>Explore page<AiOutlineArrowRight/></span></Link>
+      <Link to='/courses'><span className='underline underline-offset-8 font-semibold flex items-center gap-2 hover:scale-110 transition-all hover:translate-x-8'>Explore page<AiOutlineArrowRight/></span></Link>
     </article>
   )
 }
