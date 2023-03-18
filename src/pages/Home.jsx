@@ -11,6 +11,9 @@ import {GiBookStorm} from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 import sanityClient  from '../../services/client'
 
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
 const Home = () => {
     const [courses, setCourses] = useState([])
     const [team, setTeam] = useState([])
@@ -33,10 +36,30 @@ const Home = () => {
             }
         }
         
+
         fetchCoures()
         fetchTeam()
     },[])
 
+    const responsive = {
+        superLargeDesktop: {
+          // the naming can be any, depends on you.
+          breakpoint: { max: 4000, min: 3000 },
+          items: 1
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 1
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 1
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1
+        }
+      };
 
     return (
     <main className=''>
@@ -44,8 +67,7 @@ const Home = () => {
         {/* hero section */}
         <section className='bg-[#65E4A3] grid md:grid-cols-2 md:gap-28 gap-8 grid-cols-1 md:px-[6.25rem] md:pt-[3.5rem] md:pb-[6rem] px-[1rem] py-5'>
             <section>
-                <h1 className='text-xl'>About</h1>
-                <h2 className='text-5xl font-semibold leading-tight'>
+                <h2 className='text-5xl font-semibold leading-tight flex flex-col'>
                     <span>Investing in education:</span>
                     <span>The Key to a Better Future</span>
                 </h2>
@@ -56,7 +78,24 @@ const Home = () => {
                 Join us today and experience the power of a world-class education. Let us help you unlock your potential and achieve your academic goals.
                 </p>
 
-                <Link to='/register'><button className='px-10 py-2 rounded-r-full rounded-l-full font-semibold border-2 border-[#0A2640] hover:bg-[#0A2640] hover:text-[#65E4A3] hover:scale-110 transition-all'>Register</button></Link>
+                <Link to='/register'><button className='px-11 py-3 rounded-r-full rounded-l-full font-semibold border-2 border-[#0A2640] hover:bg-[#0A2640] hover:text-[#65E4A3] hover:scale-110 transition-all'>Register</button></Link>
+            </section>
+
+            <section className='col-span-2'>
+            <Carousel
+            infinite={true}
+            transitionDuration={500}
+            autoPlay={true}
+            removeArrowOnDeviceType={["tablet", "mobile","superLargeDesktop","desktop"]}
+            autoPlaySpeed={3000}
+            ssr={true}
+            showDots={true}
+            className='rounded-md'
+            responsive={responsive}>
+                <img src='/assets/banner-1.jpg'/>
+                <img src='/assets/banner-2.jpg'/>
+                <img src='/assets/banner-3.jpg'/>
+            </Carousel>
             </section>
         </section>
 
